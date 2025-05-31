@@ -29,7 +29,7 @@ body{
 }
 #main-text-3{
     color: rgb(0, 0, 87);
-    font-family:cursive;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 32px;
     font-weight: 900;
 }
@@ -78,13 +78,3 @@ body{
 }
 
 
-#themeButton {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: 2px solid #000;
-    background-color: #f0f0f0;
-    color: black;
-    position: relative;
-    z-index: 1;
-}
