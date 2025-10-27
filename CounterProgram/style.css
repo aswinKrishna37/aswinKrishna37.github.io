@@ -1,0 +1,38 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;     /* stack label and buttons vertically */
+  justify-content: center;    /* center vertically */
+  align-items: center;        /* center horizontally */
+  height: 100vh;              /* fill full screen height */
+  background-color: black;
+}
+
+#countLabel {
+  text-align: center;
+  font-size: 5em;
+  font-family: Helvetica;
+  color: white;
+}
+
+#button-container {
+  display: flex;
+  gap: 15px; /* space between buttons */
+  margin-top: 20px;
+}
+
+.buttons {
+  padding: 10px 20px;
+  font-size: 0.5em;
+  color: white;
+  background-color: rgb(59, 59, 59);
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.25s;
+}
+
+.buttons:hover {
+  background-color: rgb(151, 151, 151);
+}
