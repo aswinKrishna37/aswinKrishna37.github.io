@@ -679,3 +679,19 @@ span{
 .submit-btn:hover {
     background-color: darkblue;
 }
+
+
+
+
+.nav-button-link {
+  text-decoration: none;   /* removes underline */
+  color: inherit;          /* makes text use parent color */
+}
+
+.nav-button-link:visited {
+  color: inherit;          /* removes purple after visiting */
+}
+
+.nav-button-link:hover {
+  text-decoration: none;   /* optional: no underline on hover */
+}
