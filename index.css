@@ -7,6 +7,7 @@
     --hover-color: #f5f5f5;
     --border-color: #eee;
     --accent-color: #0066ff;
+    --alt-section-bg: #f9f9f9;
 }
 
 [data-theme="dark"] {
@@ -17,6 +18,7 @@
     --hover-color: #333333;
     --border-color: #404040;
     --accent-color: #3399ff;
+    --alt-section-bg: #252525;
 }
 
 html {
@@ -363,8 +365,8 @@ body{
     margin-top: 3rem;
 }
 
-span{
-    color: blue;
+.home-content h1 span {
+    color: var(--accent-color);
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -419,13 +421,14 @@ span{
 .projects-section {
     padding: 4rem 2rem;
     margin-top: 2rem;
+    background-color: var(--alt-section-bg);
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 3rem;
-    color: #494949;
+    color: var(--text-color);
 }
 
 .projects-grid {
@@ -436,7 +439,7 @@ span{
 }
 
 .project-card {
-    background-color: #fff;
+    background-color: var(--card-bg);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -456,12 +459,13 @@ span{
 .project-card h3 {
     padding: 1rem;
     margin: 0;
-    color: #494949;
+    color: var(--text-color);
 }
 
 .project-card p {
     padding: 0 1rem;
-    color: #666;
+    color: var(--text-color);
+    opacity: 0.8;
 }
 
 .tech-stack {
@@ -472,8 +476,8 @@ span{
 }
 
 .tech-tag {
-    background-color: #d1d1d1;
-    color: #494949;
+    background-color: var(--hover-color);
+    color: var(--text-color);
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
     font-size: 0.9rem;
@@ -487,9 +491,9 @@ span{
 
 .project-link {
     text-decoration: none;
-    color: #494949;
+    color: var(--text-color);
     padding: 0.5rem 1rem;
-    border: 2px solid #d1d1d1;
+    border: 2px solid var(--border-color);
     border-radius: 20px;
     transition: all 0.3s ease;
 }
@@ -503,7 +507,7 @@ span{
 /* Skills Section Styling */
 .skills-section {
     padding: 4rem 2rem;
-    background-color: #f9f9f9;
+    background-color: var(--bg-color);
 }
 
 .skills-container {
@@ -515,15 +519,20 @@ span{
 }
 
 .skill-category {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .skill-category h3 {
-    color: #494949;
+    color: var(--text-color);
     margin-bottom: 1.5rem;
+}
+
+.skill-category h4 {
+    color: var(--text-color);
+    /* margin-bottom: 1.5rem; */
 }
 
 .skill-bars {
@@ -540,12 +549,12 @@ span{
     display: flex;
     justify-content: space-between;
     margin-bottom: 0.5rem;
-    color: #494949;
+    color: var(--text-color);
 }
 
 .progress-bar {
     height: 8px;
-    background-color: #d1d1d1;
+    background-color: var(--border-color);
     border-radius: 4px;
     position: relative;
     overflow: hidden;
@@ -558,7 +567,7 @@ span{
     top: 0;
     height: 100%;
     width: var(--progress);
-    background-color: blue;
+    background-color: var(--accent-color);
     border-radius: 4px;
 }
 
@@ -628,6 +637,7 @@ span{
 /* Contact Section Styling */
 .contact-section {
     padding: 4rem 2rem;
+    background-color: var(--alt-section-bg);
 }
 
 .contact-container {
@@ -636,7 +646,7 @@ span{
 }
 
 .contact-form {
-    background-color: white;
+    background-color: var(--card-bg);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -649,17 +659,19 @@ span{
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    color: #494949;
+    color: var(--text-color);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 0.8rem;
-    border: 2px solid #d1d1d1;
+    border: 2px solid var(--border-color);
     border-radius: 5px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 .form-group input:focus,
@@ -697,4 +709,65 @@ span{
 
 .nav-button-link:hover {
   text-decoration: none;   /* optional: no underline on hover */
+}
+
+/* Chess Category Styling */
+.chess-category {
+    position: relative;
+    overflow: hidden;
+}
+
+.chess-category h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.rating-badge {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.rating-high {
+    background-color: #ffd700;
+    color: #333;
+}
+
+[data-theme="dark"] .rating-high {
+    background-color: #e6c200;
+    color: #1a1a1a;
+}
+
+.rating-mid {
+    background-color: #c0c0c0;
+    color: #333;
+}
+
+[data-theme="dark"] .rating-mid {
+    background-color: #a8a8a8;
+    color: #1a1a1a;
+}
+
+.rating-low {
+    background-color: #cd7f32;
+    color: #fff;
+}
+
+[data-theme="dark"] .rating-low {
+    background-color: #b86d28;
+    color: #fff;
+}
+
+.chess-rapid::after {
+    background: linear-gradient(90deg, #ffd700, #ffed4e);
+}
+
+.chess-blitz::after {
+    background: linear-gradient(90deg, #c0c0c0, #d9d9d9);
+}
+
+.chess-bullet::after {
+    background: linear-gradient(90deg, #cd7f32, #d9a574);
 }
