@@ -722,52 +722,102 @@ body{
     margin-bottom: 0.5rem;
 }
 
+.chess-ratings {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    justify-content: center;
+}
+
+.chess-rating-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 0 1 auto;
+    min-width: 80px;
+}
+
+.rating-type {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
 .rating-badge {
     display: inline-block;
-    padding: 0.3rem 0.8rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    min-width: 70px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.rating-badge:hover {
+    transform: scale(1.05);
 }
 
 .rating-high {
-    background-color: #ffd700;
+    background-color: #80b64c;
     color: #333;
 }
 
 [data-theme="dark"] .rating-high {
-    background-color: #e6c200;
+    background-color: #80b64c;
     color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(128, 182, 76);
 }
 
 .rating-mid {
-    background-color: #c0c0c0;
+    background-color: #fbd540;
     color: #333;
 }
 
 [data-theme="dark"] .rating-mid {
-    background-color: #a8a8a8;
+    background-color: #fbd540;
     color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(251, 213, 64);
 }
 
 .rating-low {
-    background-color: #cd7f32;
-    color: #fff;
+    background-color: #e3ab24;
+    color: #333;
 }
 
 [data-theme="dark"] .rating-low {
-    background-color: #b86d28;
-    color: #fff;
+    background-color: #e3ab24;
+    color: #1a1a1a;
+    box-shadow: 0 2px 8px rgba(227, 171, 36);
 }
 
-.chess-rapid::after {
-    background: linear-gradient(90deg, #ffd700, #ffed4e);
+@media (max-width: 768px) {
+    .chess-rating-item {
+        flex: 0 1 calc(50% - 0.75rem);
+    }
 }
 
-.chess-blitz::after {
-    background: linear-gradient(90deg, #c0c0c0, #d9d9d9);
+@media (max-width: 480px) {
+    .chess-rating-item {
+        flex: 0 1 100%;
+    }
+    
+    .chess-ratings {
+        gap: 1rem;
+        margin: 1rem 0;
+    }
 }
 
-.chess-bullet::after {
-    background: linear-gradient(90deg, #cd7f32, #d9a574);
+.chess-profile-link {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.chess-profile-link .project-link {
+    display: inline-block;
 }

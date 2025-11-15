@@ -47,3 +47,30 @@ setInterval(() => {
     index = (index + 1) % words.length;
     document.getElementById("changing-text").textContent = words[index];
 }, 3000);
+
+async function updateChessRatings() {
+    try {
+        const url = "https://api.chess.com/pub/player/aswinkrishna37/stats";
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error("Failed to fetch rating");
+        }
+
+        const data = await response.json();
+
+        document.getElementById("rapid-rating").textContent =
+            data.chess_rapid?.last?.rating ?? "N/A";
+
+        document.getElementById("blitz-rating").textContent =
+            data.chess_blitz?.last?.rating ?? "N/A";
+
+        document.getElementById("bullet-rating").textContent =
+            data.chess_bullet?.last?.rating ?? "N/A";
+
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+updateChessRatings();
