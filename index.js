@@ -50,12 +50,8 @@ setInterval(() => {
 
 async function updateChessRatings() {
     try {
-        const url = "https://api.chess.com/pub/player/aswinkrishna37/stats";
+        const url = "https://nameless-mode-9239.aswinkrishna2923.workers.dev/";
         const response = await fetch(url);
-        
-        if (!response.ok) {
-            throw new Error("Failed to fetch rating");
-        }
 
         const data = await response.json();
 
