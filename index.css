@@ -739,11 +739,24 @@ body{
     min-width: 80px;
 }
 
-.rating-type {
+.rating-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--text-color);
     opacity: 0.8;
+}
+
+.rating-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.rating-icon path {
+    fill: currentColor;
 }
 
 .rating-badge {
@@ -793,6 +806,19 @@ body{
     background-color: #e3ab24;
     color: #1a1a1a;
     box-shadow: 0 2px 8px rgba(227, 171, 36);
+}
+
+/* Icon colors matching their rating badges */
+.chess-rating-item:nth-child(1) .rating-icon {
+    color: #80b64c;
+}
+
+.chess-rating-item:nth-child(2) .rating-icon {
+    color: #fbd540;
+}
+
+.chess-rating-item:nth-child(3) .rating-icon {
+    color: #e3ab24;
 }
 
 @media (max-width: 768px) {
