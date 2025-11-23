@@ -7,7 +7,7 @@ function setTheme(theme) {
 }
 
 // Check for saved theme preference
-const savedTheme = localStorage.getItem('theme') || 'light';
+const savedTheme = localStorage.getItem('theme') || 'dark';
 setTheme(savedTheme);
 
 // Theme toggle functionality
