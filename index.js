@@ -40,13 +40,28 @@ menuLinks.forEach(link => {
 });
 
 // Text animation
-const words = ["am learning Web Development","am an ISTP","do some Python programming","am Iron Man"];
-let index = 0;
+let words = [];
 
-setInterval(() => {
-    index = (index + 1) % words.length;
-    document.getElementById("changing-text").textContent = words[index];
-}, 3000);
+fetch('words.json')
+    .then(response => response.json())
+    .then(data => {
+        words = data.words;
+        startTextAnimation();
+    })
+    .catch(err => console.error('Error loading words:', err));
+
+function startTextAnimation() {
+    let index = 0;
+    if (words.length > 0) {
+        document.getElementById("changing-text").textContent = words[index];
+    }
+    setInterval(() => {
+        if (words.length > 0) {
+            index = (index + 1) % words.length;
+            document.getElementById("changing-text").textContent = words[index];
+        }
+    }, 3000);
+}
 
 async function updateChessRatings() {
     try {
