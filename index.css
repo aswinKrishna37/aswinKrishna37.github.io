@@ -54,6 +54,46 @@ body{
     gap: 10px;
 }
 
+.site-banner {
+    width: 100%;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, rgba(5, 16, 32, 0.96), rgba(12, 30, 56, 0.96));
+    color: #7be7ff;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid rgba(123, 231, 255, 0.35);
+    margin-top: 76px;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 0 8px rgba(123, 231, 255, 0.9), 0 0 18px rgba(123, 231, 255, 0.8), 0 0 30px rgba(59, 130, 246, 0.7);
+    box-shadow: inset 0 0 20px rgba(123, 231, 255, 0.08), 0 0 18px rgba(59, 130, 246, 0.28);
+    filter: brightness(1.08);
+}
+
+.site-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(123, 231, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    animation: neonSweep 6s ease-in-out infinite;
+}
+
+@keyframes neonSweep {
+    0% { transform: translateX(-100%); }
+    50%, 100% { transform: translateX(100%); }
+}
+
+[data-theme="dark"] .site-banner {
+    background: linear-gradient(90deg, rgba(5, 16, 32, 0.96), rgba(12, 30, 56, 0.96));
+    color: #7be7ff;
+    border-bottom-color: rgba(123, 231, 255, 0.35);
+}
+
 @media (max-width: 768px) {
     .nav {
         padding: 0.5rem 1rem;
